@@ -6,7 +6,6 @@
 <title>Eda Sitesi</title>
 
 <style>
-/* GENEL AYARLAR */
 body,html{
   margin:0;
   padding:0;
@@ -24,12 +23,11 @@ body,html{
   box-sizing:border-box;
 }
 
-/* ANA SAYFA */
 #home{
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:center;   /* TAM ORTALAMA */
+  justify-content:center;
   text-align:center;
   background: repeating-linear-gradient(
       90deg,
@@ -37,10 +35,7 @@ body,html{
       #fff 12px, #fff 24px
   );
   color:white;
-  height:100vh;             /* tam ekran */
-  padding:0;                /* üst boşluğu kaldır */
-  box-sizing:border-box;
-
+  height:100vh;
 }
 
 #home h1{
@@ -62,14 +57,12 @@ body,html{
   display:block;
 }
 
-/* ALT SAYFALAR */
 .subpage{
   background:pink;
   padding-top:60px;
   position:relative;
 }
 
-/* GERİ BUTONU */
 .back{
   position:fixed;
   top:10px;
@@ -83,7 +76,6 @@ body,html{
   z-index:999;
 }
 
-/* DÜŞEN KALPLER */
 .heart{
   position:fixed;
   top:-20px;
@@ -96,7 +88,6 @@ body,html{
   to   { transform:translateY(120vh) }
 }
 
-/* ŞİİRLER VE SÖZLER STİL */
 .box{
   background:white;
   padding:16px;
@@ -107,12 +98,16 @@ body,html{
   font-size:18px;
   line-height:1.5;
 }
+.box img{
+  width:100%;
+  border-radius:10px;
+  margin-top:10px;
+}
 </style>
 
 </head>
 <body>
 
-<!-- ANA SAYFA -->
 <div class="page" id="home">
   <h1>Hoş geldin edammm ❤️</h1>
 
@@ -121,27 +116,23 @@ body,html{
   <a class="menu-btn" onclick="go('quotes')">💬 Sözler</a>
 </div>
 
-<!-- FOTOĞRAFLAR SAYFASI -->
+<!-- FOTOĞRAFLAR -->
 <div class="page subpage" id="photos">
   <a class="back" onclick="go('home')">← Geri</a>
   <h2 style="text-align:center;color:#550022;">Fotoğraflar</h2>
 
-  <div style="text-align:center;font-size:18px;margin-top:10px;">
-    Fotoğrafları GitHub'a yükleyince otomatik görünecek.
-  </div>
-
-  <div class="box">Fotoğraf 1 <br><img src="photo1.jpg" style="width:100%;border-radius:10px;"></div>
-  <div class="box">Fotoğraf 2 <br><img src="photo2.jpg" style="width:100%;border-radius:10px;"></div>
-  <div class="box">Fotoğraf 3 <br><img src="photo3.jpg" style="width:100%;border-radius:10px;"></div>
-  <div class="box">Fotoğraf 4 <br><img src="photo4.jpg" style="width:100%;border-radius:10px;"></div>
-  <div class="box">Fotoğraf 5 <br><img src="photo5.jpg" style="width:100%;border-radius:10px;"></div>
-  <div class="box">Fotoğraf 6 <br><img src="photo6.jpg" style="width:100%;border-radius:10px;"></div>
-  <div class="box">Fotoğraf 7 <br><img src="photo7.jpg" style="width:100%;border-radius:10px;"></div>
-  <div class="box">Fotoğraf 8 <br><img src="photo8.jpg" style="width:100%;border-radius:10px;"></div>
+  <div class="box">Fotoğraf 1 <br><img src="1902C2DB-4D2A-415C-BCB0-86FB5A959F54.jpeg"></div>
+  <div class="box">Fotoğraf 2 <br><img src="33294C29-5A44-48FE-B55A-FBDAB4995119.jpeg"></div>
+  <div class="box">Fotoğraf 3 <br><img src="41C9D592-EAF9-4D17-8897-147F19E2531F.jpeg"></div>
+  <div class="box">Fotoğraf 4 <br><img src="7D747A47-DD4F-420D-80AF-A57C9619D116.jpeg"></div>
+  <div class="box">Fotoğraf 5 <br><img src="7DAAEC08-9ADD-4307-93CE-20B347F6C87B.jpeg"></div>
+  <div class="box">Fotoğraf 6 <br><img src="AC9EEFED-AC6C-4F18-83BB-F4C577FFBAD0.jpeg"></div>
+  <div class="box">Fotoğraf 7 <br><img src="IMG_0885.jpeg"></div>
+  <div class="box">Fotoğraf 8 <br><img src="IMG_0146.jpeg"></div>
 
 </div>
 
-<!-- ŞİİRLER SAYFASI -->
+<!-- ŞİİRLER -->
 <div class="page subpage" id="poems">
   <a class="back" onclick="go('home')">← Geri</a>
   <h2 style="text-align:center;color:#550022;">Şiirler</h2>
@@ -177,7 +168,7 @@ Aşka inanma sebebimsin.
   </div>
 </div>
 
-<!-- SÖZLER SAYFASI -->
+<!-- SÖZLER -->
 <div class="page subpage" id="quotes">
   <a class="back" onclick="go('home')">← Geri</a>
   <h2 style="text-align:center;color:#550022;">Sözler</h2>
@@ -190,16 +181,13 @@ Aşka inanma sebebimsin.
 </div>
 
 <script>
-// Sayfa geçişi
 function go(id){
   document.querySelectorAll('.page').forEach(p=>p.style.display='none');
   document.getElementById(id).style.display='block';
 }
 
-// İlk açılışta ana sayfa
 go('home');
 
-// DÜŞEN KALPLER
 function heart(){
   const h=document.createElement('div');
   h.className='heart';
