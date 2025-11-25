@@ -28,8 +28,8 @@ body,html{
 #home{
   display:flex;
   flex-direction:column;
-  align-items:center;      /* ORTADA */
-  justify-content:center;  /* ORTADA */
+  align-items:center;
+  justify-content:center;   /* TAM ORTALAMA */
   text-align:center;
   background: repeating-linear-gradient(
       90deg,
@@ -37,7 +37,10 @@ body,html{
       #fff 12px, #fff 24px
   );
   color:white;
-  height:100vh;
+  height:100vh;             /* tam ekran */
+  padding:0;                /* üst boşluğu kaldır */
+  box-sizing:border-box;
+
 }
 
 #home h1{
