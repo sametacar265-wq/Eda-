@@ -1,75 +1,212 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eda 💗</title>
-    <style>
-        body {
-            background: #111;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 30px;
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eda Sitesi</title>
 
-        h1 {
-            font-size: 32px;
-            color: #ff4da6;
-            margin-bottom: 10px;
-        }
+<style>
+/* GENEL AYARLAR */
+body,html{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  font-family:Arial;
+  overflow-x:hidden;
+}
 
-        .box {
-            background: #1a1a1a;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
-            border: 1px solid #ff4da6;
-        }
+.page{
+  display:none;
+  width:100%;
+  min-height:100vh;
+  padding:20px;
+  box-sizing:border-box;
+}
 
-        .title {
-            font-size: 22px;
-            color: #ff80c6;
-            margin-bottom: 10px;
-        }
+/* ANA SAYFA */
+#home{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background: repeating-linear-gradient(
+      90deg,
+      #000 0px, #000 12px,
+      #fff 12px, #fff 24px
+  );
+  color:white;
+  text-align:center;
+}
 
-        .soz {
-            margin: 8px 0;
-            font-size: 18px;
-        }
-    </style>
+#home h1{
+  font-size:30px;
+  color:#ff2f9b;
+}
+
+.menu-btn{
+  background:#ff2f9b;
+  color:white;
+  padding:12px 20px;
+  border-radius:10px;
+  margin-top:10px;
+  font-weight:bold;
+  text-decoration:none;
+  width:180px;
+  text-align:center;
+  display:block;
+}
+
+/* ALT SAYFALAR */
+.subpage{
+  background:pink;
+  padding-top:60px;
+  position:relative;
+}
+
+/* GERİ BUTONU */
+.back{
+  position:fixed;
+  top:10px;
+  left:10px;
+  padding:10px 14px;
+  background:black;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+  z-index:999;
+}
+
+/* DÜŞEN KALPLER */
+.heart{
+  position:fixed;
+  top:-20px;
+  font-size:22px;
+  pointer-events:none;
+  animation:fall linear infinite;
+}
+@keyframes fall {
+  from { transform:translateY(-40px) }
+  to   { transform:translateY(120vh) }
+}
+
+/* ŞİİRLER VE SÖZLER STİL */
+.box{
+  background:white;
+  padding:16px;
+  border-radius:10px;
+  max-width:800px;
+  margin:20px auto;
+  box-shadow:0 6px 20px rgba(0,0,0,0.15);
+  font-size:18px;
+  line-height:1.5;
+}
+</style>
+
 </head>
 <body>
 
-    <h1>Eda İçin 💗</h1>
+<!-- ANA SAYFA -->
+<div class="page" id="home">
+  <h1>Hoş geldin edammm ❤️</h1>
 
-    <div class="box">
-        <div class="title">E - D - A Akrostişleri</div>
+  <a class="menu-btn" onclick="go('photos')">📸 Fotoğraflar</a>
+  <a class="menu-btn" onclick="go('poems')">📜 Şiirler</a>
+  <a class="menu-btn" onclick="go('quotes')">💬 Sözler</a>
+</div>
 
-        <p class="soz">🌸 **E**llerin dokunduğunda dünyam güzelleşir.</p>
-        <p class="soz">🌸 **D**aima kalbimin en özel yerindesin.</p>
-        <p class="soz">🌸 **A**şkla atan bütün hislerimin sebebisin.</p>
-        <br>
+<!-- FOTOĞRAFLAR SAYFASI -->
+<div class="page subpage" id="photos">
+  <a class="back" onclick="go('home')">← Geri</a>
+  <h2 style="text-align:center;color:#550022;">Fotoğraflar</h2>
 
-        <p class="soz">💗 **E**tki etti bana gözlerin ilk anda.</p>
-        <p class="soz">💗 **D**okundun ruhuma sessizce.</p>
-        <p class="soz">💗 **A**cı değil, huzur oldun kalbime.</p>
-        <br>
+  <div style="text-align:center;font-size:18px;margin-top:10px;">
+    Fotoğrafları GitHub'a yükleyince buraya otomatik gelecek.
+  </div>
 
-        <p class="soz">✨ **E**trafımda herkes olsa bile.</p>
-        <p class="soz">✨ **D**üşüncem hep sende.</p>
-        <p class="soz">✨ **A**şk sensiz tamamlanmaz bende.</p>
-    </div>
+  <!-- ÖRNEK 8 FOTO BLOĞU (yükleyeceğin dosya adları: photo1.jpg ... photo8.jpg) -->
+  <div class="box">Fotoğraf 1 — <br><img src="photo1.jpg" style="width:100%;border-radius:10px;"></div>
+  <div class="box">Fotoğraf 2 — <br><img src="photo2.jpg" style="width:100%;border-radius:10px;"></div>
+  <div class="box">Fotoğraf 3 — <br><img src="photo3.jpg" style="width:100%;border-radius:10px;"></div>
+  <div class="box">Fotoğraf 4 — <br><img src="photo4.jpg" style="width:100%;border-radius:10px;"></div>
+  <div class="box">Fotoğraf 5 — <br><img src="photo5.jpg" style="width:100%;border-radius:10px;"></div>
+  <div class="box">Fotoğraf 6 — <br><img src="photo6.jpg" style="width:100%;border-radius:10px;"></div>
+  <div class="box">Fotoğraf 7 — <br><img src="photo7.jpg" style="width:100%;border-radius:10px;"></div>
+  <div class="box">Fotoğraf 8 — <br><img src="photo8.jpg" style="width:100%;border-radius:10px;"></div>
 
-    <div class="box">
-        <div class="title">Kısa Aşk Sözleri</div>
+</div>
 
-        <p class="soz">❤️ Sen varsın, dünya tamam.</p>
-        <p class="soz">❤️ Sana bakmak bile yetiyor.</p>
-        <p class="soz">❤️ Kalbimin en sakin yeri sensin.</p>
-        <p class="soz">❤️ Seni düşünmek güzellik katıyor günüme.</p>
-        <p class="soz">❤️ Yanımda olman her şeye değer.</p>
-    </div>
+<!-- ŞİİRLER SAYFASI -->
+<div class="page subpage" id="poems">
+  <a class="back" onclick="go('home')">← Geri</a>
+  <h2 style="text-align:center;color:#550022;">Şiirler</h2>
+
+  <div class="box">
+Ellerini düşünmek bile huzur verir bana, <br>
+Dokunduğunda kalbime, her şey güzelleşir anında, <br>
+Aşkın en sade hali sensin aslında.
+  </div>
+
+  <div class="box">
+Etrafım kalabalık olsa da gözüm hep sende, <br>
+Dilime düşen her söz adınla başlar bende, <br>
+Anlar geçer, hislerim değişmez sende.
+  </div>
+
+  <div class="box">
+Esintisi yüzümde duran bir meltem gibisin, <br>
+Dokunuşun kalbimde iz bırakan bir izsin, <br>
+Aşkı bana öğreten tek kişisin.
+  </div>
+
+  <div class="box">
+Ellerim üşüdüğünde bile sıcak gelen adın, <br>
+Duygularımın en derininde saklı kalanım, <br>
+Aşkta tek adresim sensin canım.
+  </div>
+
+  <div class="box">
+En güzel gülüşü taşıyan kadınsın, <br>
+Dünyamı aydınlatan ışığımsın, <br>
+Aşka inanma sebebimsin.
+  </div>
+</div>
+
+<!-- SÖZLER SAYFASI -->
+<div class="page subpage" id="quotes">
+  <a class="back" onclick="go('home')">← Geri</a>
+  <h2 style="text-align:center;color:#550022;">Sözler</h2>
+
+  <div class="box">Kalbim, adını duyunca bile gülmeyi öğreniyor.</div>
+  <div class="box">Sana dokunmadan bile içimi ısıtıyorsun.</div>
+  <div class="box">Aşk sensin, gerisi sadece detay.</div>
+  <div class="box">Yanımda değilken bile en güzel yerdesin: kalbimde.</div>
+  <div class="box">Sesin bile yetiyor, dünyam sakinleşiyor.</div>
+</div>
+
+<script>
+// Sayfa geçişi
+function go(id){
+  document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+  document.getElementById(id).style.display='block';
+}
+
+// Sayfa açılınca ana sayfa gözüksün
+go('home');
+
+// DÜŞEN KALPLER
+function heart(){
+  const h=document.createElement('div');
+  h.className='heart';
+  h.style.left=Math.random()*100+'vw';
+  h.style.animationDuration=(3+Math.random()*3)+'s';
+  h.textContent='❤️';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+}
+setInterval(heart,280);
+</script>
 
 </body>
 </html>
