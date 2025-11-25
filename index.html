@@ -93,7 +93,7 @@ body,html{
   to   { transform:translateY(120vh) }
 }
 
-/* ŞİİRLER VE SÖZLER STİL */
+/* KUTULAR */
 .box{
   background:white;
   padding:16px;
@@ -103,6 +103,22 @@ body,html{
   box-shadow:0 6px 20px rgba(0,0,0,0.15);
   font-size:18px;
   line-height:1.5;
+}
+
+/* FOTOĞRAF GALERİSİ */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(120px,1fr));
+  gap:12px;
+  padding:10px;
+}
+
+.gallery img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 </style>
 
@@ -116,9 +132,10 @@ body,html{
   <a class="menu-btn" onclick="go('features')">👤 Kişisel Özellikler</a>
   <a class="menu-btn" onclick="go('poems')">📜 Şiirler</a>
   <a class="menu-btn" onclick="go('quotes')">💬 Sözler</a>
+  <a class="menu-btn" onclick="go('photos')">📷 Fotoğraflar</a> <!-- FOTOĞRAFLAR BUTONU -->
 </div>
 
-<!-- KİŞİSEL ÖZELLİKLER SAYFASI -->
+<!-- KİŞİSEL ÖZELLİKLER -->
 <div class="page subpage" id="features">
   <a class="back" onclick="go('home')">← Geri</a>
   <h2 style="text-align:center;color:#550022;">Kişisel Özellikler</h2>
@@ -144,7 +161,7 @@ body,html{
   </div>
 </div>
 
-<!-- ŞİİRLER SAYFASI -->
+<!-- ŞİİRLER -->
 <div class="page subpage" id="poems">
   <a class="back" onclick="go('home')">← Geri</a>
   <h2 style="text-align:center;color:#550022;">Şiirler</h2>
@@ -180,7 +197,7 @@ Aşka inanma sebebimsin.
   </div>
 </div>
 
-<!-- SÖZLER SAYFASI -->
+<!-- SÖZLER -->
 <div class="page subpage" id="quotes">
   <a class="back" onclick="go('home')">← Geri</a>
   <h2 style="text-align:center;color:#550022;">Sözler</h2>
@@ -190,6 +207,23 @@ Aşka inanma sebebimsin.
   <div class="box">Aşk sensin, gerisi sadece detay.</div>
   <div class="box">Yanımda değilken bile en güzel yerdesin: kalbimde.</div>
   <div class="box">Sesin bile yetiyor, dünyam sakinleşiyor.</div>
+</div>
+
+<!-- 📷 FOTOĞRAFLAR SAYFASI -->
+<div class="page subpage" id="photos">
+  <a class="back" onclick="go('home')">← Geri</a>
+  <h2 style="text-align:center;color:#550022;">Fotoğraflar</h2>
+
+  <div class="gallery">
+    <img src="1902C2DB-4D2A-415C-BCB0-86FB5A959F54.JPG">
+    <img src="33294C29-5A44-48FE-B55A-FBDAB4995119.JPG">
+    <img src="41C9D592-EAF9-4D17-8897-147F19E2531F.JPG">
+    <img src="7D747A47-DD4F-420D-80AF-A57C9619D116.jpeg">
+    <img src="7DAAEC08-9ADD-4307-93CE-20B347F6C87B.JPG">
+    <img src="AC9EEFED-AC6C-4F18-83BB-F4C577FFBAD0.JPG">
+    <img src="IMG_0146.HEIC">
+    <img src="IMG_0885.HEIC">
+  </div>
 </div>
 
 <script>
